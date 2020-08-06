@@ -1,0 +1,16 @@
+apiVersion: apps.open-cluster-management.io/v1
+kind: Subscription
+metadata:
+  name: nginx-subscription-green
+  namespace: nginx-green
+  labels:
+    app: nginx-deployment
+  annotations:
+    apps.open-cluster-management.io/github-path: blueGreen/nginx/deployment
+    apps.open-cluster-management.io/github-branch: green-nginx    
+spec:
+  channel: mortgage-ch/mortgage-channel
+  placement:
+    placementRef:
+      name: nginx-deployment
+      kind: PlacementRule

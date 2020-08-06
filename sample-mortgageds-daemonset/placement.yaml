@@ -2,10 +2,11 @@ apiVersion: apps.open-cluster-management.io/v1
 kind: PlacementRule
 metadata:
   name: mortgageds-placement
+  namespace: default    
   labels:
     app: mortgageds
 spec:
   clusterReplicas: 3
-  clusterLabels:
+  clusterSelector:
     matchLabels:
       environment: Dev

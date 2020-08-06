@@ -1,0 +1,19 @@
+apiVersion: apps.open-cluster-management.io/v1
+kind: Subscription
+metadata:
+  name: guestbook-app
+  namespace: default
+  annotations:
+    apps.open-cluster-management.io/github-path: guestbook/all-in-one
+    apps.open-cluster-management.io/github-branch: master  
+  labels:
+    app: guestbook-app
+spec:
+  channel: gbapp-ch/guestbook-app-latest
+  packageFilter:
+    filterRef:
+      name: resource-filter-configmap
+  placement:
+    placementRef:
+      name: dev-clusters
+      kind: PlacementRule

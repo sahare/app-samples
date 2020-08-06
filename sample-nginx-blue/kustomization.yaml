@@ -1,0 +1,9 @@
+resources:
+- namespace.yaml
+- channel-gitops.yaml
+- placementrule.yaml
+- ingress-nginx-subscription-blue.yaml
+- ingress-nginx-subscription-green.yaml
+- nginx-subscription-blue.yaml
+- nginx-subscription-green.yaml
+- application.yaml
